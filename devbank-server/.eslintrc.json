@@ -18,6 +18,7 @@
   "rules": {
     "prettier/prettier": "error",
     "no-useless-constructor": "off",
+    "no-useless-return": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "import-helpers/order-imports": [
       "warn",

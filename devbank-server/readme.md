@@ -4,8 +4,8 @@
    - E-mail
    - Senha
    - Conta bancária
-      - Saldo
       - Número da conta
+      - Saldo
 
 - Autenticação de usuários
    - E-mail
