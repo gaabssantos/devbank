@@ -1,9 +1,15 @@
+import { AccountsRepository } from '../database/repositories/accounts.repository';
+import { CreateAccountDTO } from '../dtos/accounts.dto';
 import { Account } from '../entities/accounts.entity';
 
 export class AccountsService {
-  create = async (accountNumber: number, balance: number) => {
+  constructor(private accountsRepository: AccountsRepository) {}
+
+  create = async ({ accountNumber, balance }: CreateAccountDTO) => {
     const account = new Account({ accountNumber, balance });
 
-    return account;
+    const createdAccount = await this.accountsRepository.create(account);
+
+    return createdAccount;
   };
 }

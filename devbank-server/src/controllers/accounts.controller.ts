@@ -10,11 +10,14 @@ const createAccountNumber = () => {
 export class AccountsController {
   constructor(private accountsService: AccountsService) {}
 
-  create = async (req: Request, res: Response, next: NextFunction) => {
+  create = async (_: Request, res: Response, next: NextFunction) => {
     try {
       const accountNumber = createAccountNumber();
 
-      const account = await this.accountsService.create(accountNumber, 0);
+      const account = await this.accountsService.create({
+        accountNumber,
+        balance: 0,
+      });
 
       res.status(StatusCodes.CREATED).json(account);
     } catch (err) {
