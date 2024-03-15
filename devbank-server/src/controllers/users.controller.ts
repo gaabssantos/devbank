@@ -10,14 +10,14 @@ export class UsersController {
     try {
       const { name, lastName, email, password } = req.body;
 
-      const createdUser = await this.usersService.create({
+      const user = await this.usersService.create({
         name,
         lastName,
         email,
         password,
       });
 
-      return res.status(StatusCodes.CREATED).json(createdUser);
+      return res.status(StatusCodes.CREATED).json(user);
     } catch (err) {
       next(err);
     }
