@@ -8,4 +8,4 @@ export const usersRoute = Router();
 const service = new UsersService();
 const controller = new UsersController(service);
 
-usersRoute.post('/users', controller.create);
+usersRoute.post('/', controller.create);
