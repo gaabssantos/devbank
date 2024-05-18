@@ -3,13 +3,18 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import jwt from 'jsonwebtoken';
 
+import { UserDTO } from '../dtos/users.dto';
 import { AppError } from '../errors/app.error';
 import { UserService } from '../services/users.service';
 
 export class SessionController {
   constructor(private userService: UserService) {}
 
-  create = async (req: Request, res: Response, next: NextFunction) => {
+  create = async (
+    req: Request<unknown, unknown, UserDTO>,
+    res: Response,
+    next: NextFunction,
+  ) => {
     try {
       const { email, password } = req.body;
 

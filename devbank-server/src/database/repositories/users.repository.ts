@@ -27,4 +27,18 @@ export class UserRepository {
 
     return userFound?.toObject<UserEntity>();
   };
+
+  valueTransfer = async (email: string, value: number) => {
+    const userOld = await this.findByEmail(email);
+
+    const valueUpdated = (userOld?.balance as number) + value;
+
+    const user = await this.userModel.findOneAndUpdate(
+      { email },
+      { balance: valueUpdated },
+      { new: true },
+    );
+
+    return user?.toObject<UserEntity>();
+  };
 }
