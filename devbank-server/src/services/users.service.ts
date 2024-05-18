@@ -13,7 +13,7 @@ export class UserService {
     return userCreated;
   };
 
-  findByEmail = async (email: string) => {
+  findByEmail = async (email: string): Promise<UserEntity | undefined> => {
     const userFound = await this.userRepository.findByEmail(email);
 
     return userFound;
