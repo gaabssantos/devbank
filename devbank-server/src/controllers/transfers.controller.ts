@@ -25,6 +25,15 @@ export class TransferController {
         );
       }
 
+      const userLogged = req.query.userEmail;
+
+      if (userLogged === email) {
+        throw new AppError(
+          `You are can't transfer for yourself`,
+          StatusCodes.BAD_REQUEST,
+        );
+      }
+
       const userUpdated = await this.userService.valueTransfer(
         user.email,
         value,

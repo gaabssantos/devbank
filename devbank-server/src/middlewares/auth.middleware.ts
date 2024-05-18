@@ -20,7 +20,7 @@ export default (req: Request, _: Response, next: NextFunction) => {
     ) as JwtPayload;
 
     req.query.userId = decoded?.id;
-    req.query.userId = decoded?.id;
+    req.query.userEmail = decoded?.email;
   } catch (err) {
     throw new AppError('Token is invalid.', StatusCodes.UNAUTHORIZED);
   }
