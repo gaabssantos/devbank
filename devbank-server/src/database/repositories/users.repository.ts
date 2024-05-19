@@ -28,17 +28,25 @@ export class UserRepository {
     return userFound?.toObject<UserEntity>();
   };
 
-  valueTransfer = async (email: string, value: number) => {
-    const userOld = await this.findByEmail(email);
+  valueTransfer = async (emailFrom: string, email: string, value: number) => {
+    const transferredUser = await this.findByEmail(email);
+    const fromTransferredUser = await this.findByEmail(emailFrom);
 
-    const valueUpdated = (userOld?.balance as number) + value;
+    const valueUpdated = (transferredUser?.balance as number) + value;
+    const valueFromUpdated = (fromTransferredUser?.balance as number) - value;
 
-    const user = await this.userModel.findOneAndUpdate(
+    const toUser = await this.userModel.findOneAndUpdate(
       { email },
       { balance: valueUpdated },
       { new: true },
     );
 
-    return user?.toObject<UserEntity>();
+    const fromUser = await this.userModel.findOneAndUpdate(
+      { email: emailFrom },
+      { balance: valueFromUpdated },
+      { new: true },
+    );
+
+    return toUser?.toObject<UserEntity>();
   };
 }

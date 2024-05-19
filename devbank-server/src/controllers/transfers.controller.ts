@@ -34,7 +34,19 @@ export class TransferController {
         );
       }
 
+      const fromUser = await this.userService.findByEmail(userLogged as string);
+
+      if (fromUser?.balance != undefined) {
+        if (fromUser?.balance < value) {
+          throw new AppError(
+            'Your balance is less than value.',
+            StatusCodes.BAD_REQUEST,
+          );
+        }
+      }
+
       const userUpdated = await this.userService.valueTransfer(
+        userLogged as string,
         user.email,
         value,
       );

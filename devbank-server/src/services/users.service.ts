@@ -19,8 +19,12 @@ export class UserService {
     return userFound;
   };
 
-  valueTransfer = async (email: string, value: number) => {
-    const user = await this.userRepository.valueTransfer(email, value);
+  valueTransfer = async (emailFrom: string, email: string, value: number) => {
+    const user = await this.userRepository.valueTransfer(
+      emailFrom,
+      email,
+      value,
+    );
 
     return user;
   };
