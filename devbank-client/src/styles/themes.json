@@ -1,0 +1,36 @@
+{
+  "absolutes": {
+    "white": "#FFFFFF",
+    "black": "#000000"
+  },
+  "primary": {
+    "variant1": "#CAFF33",
+    "variant2": "#D1FF4C",
+    "variant3": "#D8FF66",
+    "variant4": "#E5FF99",
+    "variant5": "#F2FFCC",
+    "variant6": "#F8FFE5",
+    "variant7": "#FBFFF0",
+    "variant8": "#FEFFFA"
+  },
+  "shades": {
+    "white": {
+      "variant1": "#E4E4E7",
+      "variant2": "#F1F1F3",
+      "variant3": "#F7F7F8",
+      "variant4": "#FCFCFD"
+    },
+    "gray": {
+      "variant1": "#191919",
+      "variant2": "#1C1C1C",
+      "variant3": "#262626",
+      "variant4": "#333333",
+      "variant5": "#4C4C4D",
+      "variant6": "#59595A",
+      "variant7": "#656567",
+      "variant8": "#98989A",
+      "variant9": "#B3B3B3",
+      "variant10": "#BFBFBF"
+    }
+  }
+}
