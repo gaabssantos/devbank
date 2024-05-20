@@ -23,14 +23,15 @@
     "gray": {
       "variant1": "#191919",
       "variant2": "#1C1C1C",
-      "variant3": "#262626",
-      "variant4": "#333333",
-      "variant5": "#4C4C4D",
-      "variant6": "#59595A",
-      "variant7": "#656567",
-      "variant8": "#98989A",
-      "variant9": "#B3B3B3",
-      "variant10": "#BFBFBF"
+      "variant3": "#1A1A1A",
+      "variant4": "#262626",
+      "variant5": "#333333",
+      "variant6": "#4C4C4D",
+      "variant7": "#59595A",
+      "variant8": "#656567",
+      "variant9": "#98989A",
+      "variant10": "#B3B3B3",
+      "variant11": "#BFBFBF"
     }
   }
 }
