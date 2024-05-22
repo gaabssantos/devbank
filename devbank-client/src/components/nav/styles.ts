@@ -46,6 +46,11 @@ export const Item = styled.li<ItemProps>`
     props.active && `${themes.shades.gray.variant4}`};
   padding: ${(props) => props.active && `0.75rem 1.5rem`};
   border-radius: ${(props) => props.active && `3.125rem`};
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const ResponsiveHidden = styled.div`

@@ -1,5 +1,8 @@
+import { useState } from 'react';
+
 import Button from '../button';
 import ResponsiveBar from '../responsive-bar';
+import ResponsiveMenu from '../responsive-menu';
 import {
   Container,
   Item,
@@ -13,6 +16,8 @@ import {
 import logo from '/logo.png';
 
 const Nav = () => {
+  const [responsiveMenu, setResponsiveMenu] = useState(false);
+
   return (
     <Container>
       <Logo>
@@ -34,8 +39,9 @@ const Nav = () => {
         <Button variant="green">Logar</Button>
       </ResponsiveHidden>
       <Responsive>
-        <ResponsiveBar />
+        <ResponsiveBar onClick={() => setResponsiveMenu(!responsiveMenu)} />
       </Responsive>
+      {responsiveMenu && <ResponsiveMenu />}
     </Container>
   );
 };
