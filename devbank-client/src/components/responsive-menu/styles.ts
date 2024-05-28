@@ -25,6 +25,10 @@ export const Container = styled.div`
   width: 50%;
   height: 100%;
   background-color: ${themes.shades.gray.variant1};
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 `;
 
 export const Items = styled.ul`
