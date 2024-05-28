@@ -1,5 +1,6 @@
 import AbstractDesign from '../../components/abstract-design';
 import Nav from '../../components/nav';
+import Warning from '../../components/warning';
 import { Container } from './styles';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <AbstractDesign />
       <Container>
         <Nav />
+        <Warning />
       </Container>
     </>
   );
