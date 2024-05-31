@@ -1,6 +1,6 @@
-import AbstractDesign from '../../components/abstract-design';
+import AbstractDesign from '../../components/images/abstract-design';
 import Nav from '../../components/nav';
-import Warning from '../../components/warning';
+import OpenAccount from '../../containers/open-account-container';
 import { Container } from './styles';
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
       <AbstractDesign />
       <Container>
         <Nav />
-        <Warning />
+        <OpenAccount />
       </Container>
     </>
   );

@@ -6,7 +6,7 @@ interface ItemProps {
   active?: boolean;
 }
 
-export const Container = styled.div`
+export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
