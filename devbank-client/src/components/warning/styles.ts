@@ -11,4 +11,8 @@ export const Container = styled.div`
   padding: 1rem;
   gap: 0.25rem;
   border-radius: 3.75rem;
+
+  @media (max-width: 600px) {
+    width: 24rem;
+  }
 `;

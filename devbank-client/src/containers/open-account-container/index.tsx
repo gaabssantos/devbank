@@ -1,6 +1,7 @@
 import { Spacer, SpecialTitle, Text, Title } from '../../components';
 import Button from '../../components/button';
 import IncomesExcomes from '../../components/images/incomes-excomes';
+import OpenAccountDesign from '../../components/images/open-account-design';
 import Warning from '../../components/warning';
 import { Container } from './styles';
 
@@ -11,7 +12,7 @@ const OpenAccount = () => {
         <Spacer size={4.375} />
         <Warning />
         <Title>
-          Bem-vindo ao DevBank fortalecendo sua
+          Bem-vindo ao DevBank fortalecendo sua{' '}
           <SpecialTitle>jornada financeira</SpecialTitle>
         </Title>
         <Text margin={'0 0 2rem 0'}>
@@ -24,6 +25,7 @@ const OpenAccount = () => {
       </div>
       <div>
         <IncomesExcomes />
+        <OpenAccountDesign />
       </div>
     </Container>
   );

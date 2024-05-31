@@ -24,4 +24,9 @@ export const Container = styled.button<ButtonProps>`
   &:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 600px) {
+    display: block;
+    margin: 0 auto;
+  }
 `;
