@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { absolutes, primary } from '../styles/themes.json';
 
 type SpacerProps = {
-  size: number;
+  size?: number;
 };
 
 type TextProps = {
-  margin: string;
+  margin?: string;
 };
 
 export const Title = styled.h2`
@@ -16,6 +16,14 @@ export const Title = styled.h2`
   font-weight: 500;
   line-height: 150%;
   width: 40rem;
+
+  @media (max-width: 600px) {
+    width: 25rem;
+  }
+
+  @media (min-width: 601px) and (max-width: 800px) {
+    width: 30rem;
+  }
 `;
 
 export const SpecialTitle = styled.span`
@@ -29,6 +37,14 @@ export const Text = styled.p<TextProps>`
   line-height: 24px;
   width: 40rem;
   margin: ${(props) => (props.margin ? props.margin : 0)};
+
+  @media (max-width: 600px) {
+    width: 25rem;
+  }
+
+  @media (min-width: 601px) and (max-width: 800px) {
+    width: 30rem;
+  }
 `;
 
 export const Spacer = styled.div<SpacerProps>`
