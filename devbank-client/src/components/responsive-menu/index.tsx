@@ -1,8 +1,12 @@
 import { Container, Item, Items } from './styles';
 
-const ResponsiveMenu = () => {
+type ResponsiveMenuProps = {
+  active: boolean;
+};
+
+const ResponsiveMenu = ({ active }: ResponsiveMenuProps) => {
   return (
-    <Container>
+    <Container active={active}>
       <Items>
         <Item active>Home</Item>
         <Item>Carreiras</Item>

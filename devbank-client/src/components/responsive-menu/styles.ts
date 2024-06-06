@@ -6,8 +6,12 @@ interface ItemProps {
   active?: boolean;
 }
 
-export const Container = styled.div`
-  @keyframes slideRight {
+interface ContainerProps {
+  active: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
+  @keyframes slidein {
     from {
       width: 0;
     }
@@ -17,14 +21,25 @@ export const Container = styled.div`
     }
   }
 
-  position: absolute;
+  @keyframes slideout {
+    from {
+      width: 50%;
+    }
+
+    to {
+      width: 0;
+    }
+  }
+
+  position: fixed;
   top: 0;
   left: 0;
-  animation-name: slideRight;
-  animation-duration: 0.5s;
+  z-index: 1;
   width: 50%;
   height: 100%;
   background-color: ${themes.shades.gray.variant1};
+  animation-duration: 0.5s;
+  animation-name: 'slidein';
 
   @media (min-width: 800px) {
     display: none;

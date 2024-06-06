@@ -1,8 +1,15 @@
+import {
+  Box,
+  List,
+  Drawer,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from '@mui/material';
 import { useState } from 'react';
 
 import Button from '../button';
 import ResponsiveBar from '../responsive-bar';
-import ResponsiveMenu from '../responsive-menu';
 import {
   Container,
   Item,
@@ -16,7 +23,25 @@ import {
 import logo from '/logo.png';
 
 const Nav = () => {
-  const [responsiveMenu, setResponsiveMenu] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
+
+  const DrawerList = (
+    <Box sx={{ width: 400 }} role="presentation" onClick={toggleDrawer(false)}>
+      <List>
+        {['Home', 'Carreiras', 'Sobre', 'Segurança'].map((text) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
     <Container>
@@ -39,9 +64,11 @@ const Nav = () => {
         <Button variant="green">Logar</Button>
       </ResponsiveHidden>
       <Responsive>
-        <ResponsiveBar onClick={() => setResponsiveMenu(!responsiveMenu)} />
+        <ResponsiveBar onClick={toggleDrawer(true)} />
       </Responsive>
-      {responsiveMenu && <ResponsiveMenu />}
+      <Drawer open={open} onClose={toggleDrawer(false)}>
+        {DrawerList}
+      </Drawer>
     </Container>
   );
 };
