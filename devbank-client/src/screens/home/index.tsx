@@ -1,5 +1,6 @@
-import AbstractDesign from '../../components/images/abstract-design';
+import AbstractDesign from '../../components/images/AbstractDesign';
 import OpenAccount from '../../containers/OpenAccountContainer';
+import Products from '../../containers/ProductsContainer';
 import { Container } from './styles';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <AbstractDesign />
       <Container>
         <OpenAccount />
+        <Products />
       </Container>
     </>
   );
