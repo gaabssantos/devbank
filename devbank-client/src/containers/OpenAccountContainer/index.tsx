@@ -1,8 +1,8 @@
 import { Spacer, SpecialTitle, Text, Title } from '../../components';
-import Button from '../../components/button';
+import Button from '../../components/Button';
 import IncomesExcomes from '../../components/images/incomes-excomes';
 import OpenAccountDesign from '../../components/images/open-account-design';
-import Warning from '../../components/warning';
+import Warning from '../../components/Warning';
 import { Container } from './styles';
 
 const OpenAccount = () => {

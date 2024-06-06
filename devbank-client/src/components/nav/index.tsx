@@ -8,8 +8,8 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 
-import Button from '../button';
-import ResponsiveBar from '../responsive-bar';
+import Button from '../Button';
+import ResponsiveBar from '../ResponsiveBar';
 import {
   Container,
   Item,

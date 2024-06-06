@@ -1,5 +1,5 @@
 import responsive from '../../assets/responsive-bar.svg';
-import Button from '../button';
+import Button from '../Button';
 
 interface ResponsiveBarProps {
   onClick: () => void;

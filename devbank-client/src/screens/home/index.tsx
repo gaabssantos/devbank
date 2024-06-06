@@ -1,6 +1,6 @@
 import AbstractDesign from '../../components/images/abstract-design';
-import Nav from '../../components/nav';
-import OpenAccount from '../../containers/open-account-container';
+import Nav from '../../components/Nav';
+import OpenAccount from '../../containers/OpenAccountContainer';
 import { Container } from './styles';
 
 const Home = () => {
