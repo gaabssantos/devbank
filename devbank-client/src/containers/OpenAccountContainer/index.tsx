@@ -1,7 +1,7 @@
 import { Spacer, SpecialTitle, Text, Title } from '../../components';
 import Button from '../../components/Button';
-import IncomesExcomes from '../../components/images/IncomesExcomes';
-import OpenAccountDesign from '../../components/images/OpenAccountDesign';
+import IncomesExcomes from '../../components/Images/IncomesExcomes';
+import OpenAccountDesign from '../../components/Images/OpenAccountDesign';
 import Warning from '../../components/Warning';
 import { Container } from './styles';
 

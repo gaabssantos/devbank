@@ -1,4 +1,4 @@
-import AbstractDesign from '../../components/images/AbstractDesign';
+import AbstractDesign from '../../components/Images/AbstractDesign';
 import OpenAccount from '../../containers/OpenAccountContainer';
 import Products from '../../containers/ProductsContainer';
 import { Container } from './styles';
