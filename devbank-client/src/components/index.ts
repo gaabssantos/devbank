@@ -44,7 +44,7 @@ export const SpecialTitle = styled.span`
 `;
 
 export const Text = styled.p<TextProps>`
-  color: ${absolutes.white};
+  color: ${shades.gray.variant10};
   font-size: 15px;
   font-weight: 300;
   line-height: 24px;
