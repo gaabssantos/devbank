@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import checking from '../../assets/icons/checking.svg';
-import loans from '../../assets/icons/loans.svg';
-import saving from '../../assets/icons/saving.svg';
+import checking from '../../assets/icons/products/checking.svg';
+import loans from '../../assets/icons/products/loans.svg';
+import saving from '../../assets/icons/products/saving.svg';
 import {
   Divider,
   Flex,

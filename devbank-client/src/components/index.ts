@@ -85,3 +85,16 @@ export const Divider = styled.div`
     display: none;
   }
 `;
+
+export const IconContainer = styled.div`
+  border-radius: 70px;
+  background: linear-gradient(
+    180deg,
+    rgba(202, 255, 51, 0.05) 0%,
+    rgba(202, 255, 51, 0) 100%
+  );
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding-top: 1.56rem;
+`;

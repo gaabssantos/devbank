@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import { Text, TitleSmall } from '..';
+import { IconContainer, Text, TitleSmall } from '..';
 
-import { Container, IconContainer } from './styles';
+import { Container } from './styles';
 
 type ProductsCardProps = {
   title: string;
