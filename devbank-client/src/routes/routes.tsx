@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import DefaultLayout from '../layouts/UserNotLoggedLayout';
+import DefaultLayout from '../layouts/Layout';
 import Home from '../screens/Home';
 
 const Router = () => {

@@ -1,4 +1,5 @@
 import CardContact from '../CardContact';
+import CardFooter from '../CardFooter';
 import { Container, FooterContainer, Logo } from './styles';
 
 import logo from '/logo.png';
@@ -20,6 +21,7 @@ const Footer = () => {
           <li>Segurança</li>
         </ul>
         <CardContact />
+        <CardFooter />
       </Container>
     </FooterContainer>
   );

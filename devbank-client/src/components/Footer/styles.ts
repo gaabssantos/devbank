@@ -15,6 +15,7 @@ export const Container = styled.div`
   width: 75%;
   margin: 0 auto;
   padding-top: 5rem;
+  padding-bottom: 3rem;
 
   h2 {
     color: ${themes.absolutes.white};

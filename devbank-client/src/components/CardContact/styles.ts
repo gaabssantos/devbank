@@ -11,6 +11,10 @@ export const Container = styled.div`
   width: 100%;
   padding: 3.125rem;
   margin-top: 3rem;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Item = styled.div`
