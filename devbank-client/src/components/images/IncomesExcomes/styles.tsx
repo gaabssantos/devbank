@@ -6,6 +6,7 @@ export const Svg = styled.svg`
   width: 25rem;
   padding-left: 5rem;
   padding-top: 5rem;
+  pointer-events: none;
 
   @media (max-width: 1200px) {
     position: relative;
