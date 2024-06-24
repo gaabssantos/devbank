@@ -1,3 +1,4 @@
+import CardOpenAccount from '../../components/CardOpenAccount';
 import AbstractDesign from '../../components/Images/AbstractDesign';
 import OpenAccount from '../../containers/OpenAccountContainer';
 import Products from '../../containers/ProductsContainer';
@@ -10,6 +11,7 @@ const Home = () => {
       <Container>
         <OpenAccount />
         <Products />
+        <CardOpenAccount />
       </Container>
     </>
   );
