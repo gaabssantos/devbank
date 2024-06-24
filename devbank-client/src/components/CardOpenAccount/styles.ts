@@ -5,6 +5,7 @@ import themes from '../../styles/themes.json';
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   border-radius: 20px;
   border: 1px solid ${themes.shades.gray.variant4};
   background:
