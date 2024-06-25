@@ -13,4 +13,9 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background-color: ${themes.shades.gray.variant3};
     }
+
+    a {
+        text-decoration: none;
+        color: ${themes.absolutes.white};
+    }
 `;
