@@ -7,6 +7,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Button from '../Button';
 import ResponsiveBar from '../ResponsiveBar';
@@ -53,14 +54,18 @@ const Nav = () => {
       </Logo>
       <ResponsiveHidden>
         <Items>
-          <Item active>Home</Item>
+          <Item active>
+            <Link to={'/'}>Home</Link>
+          </Item>
           <Item>Carreiras</Item>
           <Item>Sobre</Item>
           <Item>Segurança</Item>
         </Items>
       </ResponsiveHidden>
       <ResponsiveHidden>
-        <Button variant="none">Cadastrar</Button>
+        <Button variant="none">
+          <Link to={'/cadastrar'}>Cadastrar</Link>
+        </Button>
         <Button variant="green">Logar</Button>
       </ResponsiveHidden>
       <Responsive>
