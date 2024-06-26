@@ -8,7 +8,7 @@ import { FaLinkedin } from 'react-icons/fa';
 const CardFooter = () => {
   return (
     <Container>
-      <Flex gap={1}>
+      <Flex $gap={1}>
         <a href="https://www.instagram.com/gaabssantos._/" target="_blank">
           <CircleContact>
             <AiFillInstagram />

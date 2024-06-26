@@ -14,7 +14,7 @@ type FlexProps = {
   justify?: string;
   align?: string;
   wrap?: boolean;
-  gap?: number;
+  $gap?: number;
 };
 
 export const Title = styled.h2`
@@ -65,10 +65,10 @@ export const Spacer = styled.div<SpacerProps>`
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
-  justify-content: ${(props) => props.justify};
-  align-items: ${(props) => props.align};
-  flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'no-wrap')};
-  gap: ${(props) => `${props.gap}rem`};
+  justify-content: ${(props) => props.$justify};
+  align-items: ${(props) => props.$align};
+  flex-wrap: ${(props) => (props.$wrap ? 'wrap' : 'no-wrap')};
+  gap: ${(props) => `${props.$gap}rem`};
 `;
 
 export const Divider = styled.div`
@@ -113,5 +113,16 @@ export const CircleContact = styled.div`
   svg {
     color: ${absolutes.black};
     font-size: 1.5rem;
+  }
+`;
+
+export const ErrorMessage = styled.div`
+  color: ${absolutes.black};
+  background-color: ${absolutes.white};
+  border-left: 10px solid ${absolutes.errorBorder};
+  padding: 2rem;
+
+  ul {
+    list-style-type: none;
   }
 `;

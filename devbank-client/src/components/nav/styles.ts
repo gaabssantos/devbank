@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import themes from '../../styles/themes.json';
 
 interface ItemProps {
-  active?: boolean;
+  $active?: boolean;
 }
 
 export const Container = styled.nav`
@@ -43,9 +43,9 @@ export const Items = styled.ul`
 export const Item = styled.li<ItemProps>`
   cursor: pointer;
   background-color: ${(props) =>
-    props.active && `${themes.shades.gray.variant4}`};
-  padding: ${(props) => props.active && `0.75rem 1.5rem`};
-  border-radius: ${(props) => props.active && `3.125rem`};
+    props.$active && `${themes.shades.gray.variant4}`};
+  padding: ${(props) => props.$active && `0.75rem 1.5rem`};
+  border-radius: ${(props) => props.$active && `3.125rem`};
   transition: 0.5s;
 
   &:hover {

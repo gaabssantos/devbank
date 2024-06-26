@@ -11,7 +11,7 @@ interface ButtonProps {
 
 const Button = ({ children, variant, onClick, id }: ButtonProps) => {
   return (
-    <Container variant={variant} onClick={onClick} id={id}>
+    <Container $variant={variant} onClick={onClick} id={id} type="submit">
       {children}
     </Container>
   );

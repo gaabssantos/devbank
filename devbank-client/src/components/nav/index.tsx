@@ -58,12 +58,12 @@ const Nav = ({ active }: NavProps) => {
       </Logo>
       <ResponsiveHidden>
         <Items>
-          <Item active={active === '/'}>
+          <Item $active={active === '/'}>
             <Link to={'/'}>Home</Link>
           </Item>
-          <Item active={active === '/carreiras'}>Carreiras</Item>
-          <Item active={active === '/sobre'}>Sobre</Item>
-          <Item active={active === '/segurança'}>Segurança</Item>
+          <Item $active={active === '/carreiras'}>Carreiras</Item>
+          <Item $active={active === '/sobre'}>Sobre</Item>
+          <Item $active={active === '/segurança'}>Segurança</Item>
         </Items>
       </ResponsiveHidden>
       <ResponsiveHidden>
