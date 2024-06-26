@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import { Spacer, SpecialTitle, Text, Title } from '../../components';
 import Button from '../../components/Button';
 import IncomesExcomes from '../../components/Images/IncomesExcomes';
 import OpenAccountDesign from '../../components/Images/OpenAccountDesign';
 import Warning from '../../components/Warning';
+import themes from '../../styles/themes.json';
 import { Container } from './styles';
 
 const OpenAccount = () => {
@@ -21,7 +24,14 @@ const OpenAccount = () => {
           Temos o compromisso de fornecer serviços personalizados e inovadores
           que priorizem as necessidades de nossos clientes.
         </Text>
-        <Button variant="green">Abrir conta</Button>
+        <Button variant="green">
+          <Link
+            to={'/cadastrar'}
+            style={{ color: `${themes.absolutes.black}` }}
+          >
+            Abrir conta
+          </Link>
+        </Button>
       </div>
       <div>
         <IncomesExcomes />
