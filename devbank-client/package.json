@@ -19,7 +19,8 @@
     "react-hook-form": "^7.52.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
