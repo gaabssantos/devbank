@@ -2,6 +2,7 @@
   "absolutes": {
     "white": "#FFFFFF",
     "black": "#000000",
+    "errorText": "#FF2130",
     "errorBorder": "#850101"
   },
   "primary": {
