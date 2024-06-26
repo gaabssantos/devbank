@@ -21,5 +21,5 @@ export const userSchema = {
   password: z
     .string()
     .trim()
-    .min(1, { message: 'The field need more than one character' }),
+    .min(8, { message: 'The field need more than eight character' }),
 };
