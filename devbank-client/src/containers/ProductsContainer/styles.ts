@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 import themes from '../../styles/themes.json';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  p#description {
+    width: 40rem;
+  }
+`;
 
 export const Select = styled.div`
   padding: 0.875rem;

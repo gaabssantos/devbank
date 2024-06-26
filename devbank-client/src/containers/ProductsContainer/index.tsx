@@ -25,7 +25,7 @@ const Products = () => {
         Nossos <SpecialTitle>produtos</SpecialTitle>
       </Title>
       <Flex justify="space-between" align="center" wrap>
-        <Text>
+        <Text id="description">
           Descubra uma gama de produtos bancários abrangentes e personaliáveis
           no DevBank, projetados para atender às suas necessidades e aspirações
           financeiras exclusivas
