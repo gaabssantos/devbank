@@ -65,9 +65,9 @@ export const Spacer = styled.div<SpacerProps>`
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
-  justify-content: ${(props) => props.$justify};
-  align-items: ${(props) => props.$align};
-  flex-wrap: ${(props) => (props.$wrap ? 'wrap' : 'no-wrap')};
+  justify-content: ${(props) => props.justify};
+  align-items: ${(props) => props.align};
+  flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'no-wrap')};
   gap: ${(props) => `${props.$gap}rem`};
 `;
 
@@ -125,4 +125,8 @@ export const ErrorMessage = styled.div`
   ul {
     list-style-type: none;
   }
+`;
+
+export const ErrorText = styled.p`
+  color: ${absolutes.errorText};
 `;
