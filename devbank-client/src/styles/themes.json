@@ -1,7 +1,10 @@
 {
   "absolutes": {
     "white": "#FFFFFF",
-    "black": "#000000"
+    "black": "#000000",
+    "error": "#F71919",
+    "errorBackground": "#F75959",
+    "errorBorder": "#850101"
   },
   "primary": {
     "variant1": "#CAFF33",
