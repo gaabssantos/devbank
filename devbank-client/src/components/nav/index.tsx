@@ -9,6 +9,7 @@ import {
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import themes from '../../styles/themes.json';
 import Button from '../Button';
 import ResponsiveBar from '../ResponsiveBar';
 import {
@@ -70,7 +71,11 @@ const Nav = ({ active }: NavProps) => {
         <Button variant="none">
           <Link to={'/cadastrar'}>Cadastrar</Link>
         </Button>
-        <Button variant="green">Logar</Button>
+        <Button variant="green">
+          <Link to={'/logar'} style={{ color: `${themes.absolutes.black}` }}>
+            Logar
+          </Link>
+        </Button>
       </ResponsiveHidden>
       <Responsive>
         <ResponsiveBar onClick={toggleDrawer(true)} />
