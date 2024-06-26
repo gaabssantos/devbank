@@ -23,7 +23,11 @@ import {
 
 import logo from '/logo.png';
 
-const Nav = () => {
+type NavProps = {
+  active: string;
+};
+
+const Nav = ({ active }: NavProps) => {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -54,12 +58,12 @@ const Nav = () => {
       </Logo>
       <ResponsiveHidden>
         <Items>
-          <Item active>
+          <Item active={active === '/'}>
             <Link to={'/'}>Home</Link>
           </Item>
-          <Item>Carreiras</Item>
-          <Item>Sobre</Item>
-          <Item>Segurança</Item>
+          <Item active={active === '/carreiras'}>Carreiras</Item>
+          <Item active={active === '/sobre'}>Sobre</Item>
+          <Item active={active === '/segurança'}>Segurança</Item>
         </Items>
       </ResponsiveHidden>
       <ResponsiveHidden>

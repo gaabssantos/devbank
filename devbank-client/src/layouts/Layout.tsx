@@ -12,7 +12,7 @@ const DefaultLayout = () => {
   return (
     <>
       <Container>
-        <Nav />
+        <Nav active={pathname} />
       </Container>
       {pathname === '/' && <AbstractDesign />}
       <MainContainer>
