@@ -55,6 +55,21 @@ export const Form = styled.form`
   }
 `;
 
+export const InputControl = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  input {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+`;
+
 export const Actions = styled.div`
   button {
     display: block;
