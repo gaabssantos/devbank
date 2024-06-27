@@ -63,14 +63,6 @@ const SignUp = () => {
           <p>Por favor, corrija os erros antes de continuar.</p>
         </ErrorMessage>
       )}
-      {/* {errors.email?.message ||
-        errors.lastName?.message ||
-        errors.name?.message ||
-        (errors.password?.message && (
-          <ErrorMessage>
-            <p>Por favor, corrija os erros antes de continuar.</p>
-          </ErrorMessage>
-        ))} */}
 
       <Title>
         <SpecialTitle>Cadastro</SpecialTitle>
