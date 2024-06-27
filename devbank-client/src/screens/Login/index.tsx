@@ -13,7 +13,9 @@ import {
 } from '../../components';
 import Button from '../../components/Button';
 import SignupDesign from '../../components/Images/SignupDesign';
+import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { Actions, Container, Form, InputControl } from './styles';
+import { SessionUserData } from '../../validators/types';
 
 type Inputs = {
   email: string;
@@ -41,7 +43,11 @@ const SignUp = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const { sessionUser } = useFetchAPI();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data: SessionUserData) => {
+    await sessionUser(data);
+  };
 
   return (
     <Container>

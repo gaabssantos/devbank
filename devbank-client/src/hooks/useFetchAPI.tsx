@@ -1,10 +1,11 @@
 import { ReactNode, createContext, useCallback, useContext } from 'react';
 
 import { APIService } from '../services/api';
-import { CreateUserData } from '../validators/types';
+import { CreateUserData, SessionUserData } from '../validators/types';
 
 interface FetchAPIProps {
   createUser: (data: CreateUserData) => Promise<void>;
+  sessionUser: (data: SessionUserData) => Promise<void>;
 }
 
 const FetchAPIContext = createContext<FetchAPIProps>({} as FetchAPIProps);
@@ -20,8 +21,21 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
     });
   }, []);
 
+  const sessionUser = useCallback(async (data: SessionUserData) => {
+    const userData = await APIService.sessionUser({
+      ...data,
+    });
+
+    const userObj = {
+      email: userData.email,
+      token: userData.token,
+    };
+
+    localStorage.setItem('devbank:userData', JSON.stringify(userObj));
+  }, []);
+
   return (
-    <FetchAPIContext.Provider value={{ createUser }}>
+    <FetchAPIContext.Provider value={{ createUser, sessionUser }}>
       {children}
     </FetchAPIContext.Provider>
   );

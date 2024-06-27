@@ -6,9 +6,8 @@ export type CreateUser = {
 };
 
 export type User = {
-  _id: string;
-  name: string;
-  lastName: string;
+  _id?: string;
   email: string;
   password: string;
+  token?: string;
 };

@@ -15,4 +15,10 @@ export class APIService {
 
     return data;
   }
+
+  static async sessionUser(user: User): Promise<User> {
+    const { data } = await APIService.client.post<User>('/users/session', user);
+
+    return data;
+  }
 }
