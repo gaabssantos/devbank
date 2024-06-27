@@ -1,7 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { AxiosError } from 'axios';
 import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as z from 'zod';
 
 import {
@@ -13,7 +15,11 @@ import {
 } from '../../components';
 import Button from '../../components/Button';
 import SignupDesign from '../../components/Images/SignupDesign';
+import { useFetchAPI } from '../../hooks/useFetchAPI';
+import { CreateUserData } from '../../validators/types';
 import { Actions, Container, Form, InputControl } from './styles';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 type Inputs = {
   name: string;
@@ -50,7 +56,19 @@ const SignUp = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const { createUser } = useFetchAPI();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data: CreateUserData) => {
+    try {
+      await createUser(data);
+      toast.success('Usuário cadastrado com sucesso!');
+    } catch (error) {
+      const err = error as AxiosError;
+      if (err.response?.status === 401) {
+        toast.error('Este e-mail já existe, tente usar outro.');
+      }
+    }
+  };
 
   return (
     <Container>
