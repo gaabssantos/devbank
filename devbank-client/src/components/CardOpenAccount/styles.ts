@@ -24,7 +24,7 @@ export const Container = styled.div`
   }
 
   button {
-    width: 25%;
+    width: 110%;
   }
 
   @media (max-width: 1000px) {

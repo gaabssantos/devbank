@@ -118,9 +118,11 @@ const SignUp = () => {
         </InputControl>
         <Actions>
           <Button variant="green">Cadastrar</Button>
-          <Button variant="none" id="login">
-            <Link to={'/logar'}>Logar</Link>
-          </Button>
+          <Link to={'/logar'}>
+            <Button variant="none" id="login">
+              Logar
+            </Button>
+          </Link>
         </Actions>
       </Form>
     </Container>
