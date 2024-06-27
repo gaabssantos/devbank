@@ -17,7 +17,7 @@ const OpenAccount = () => {
           Bem-vindo ao DevBank fortalecendo sua{' '}
           <SpecialTitle>jornada financeira</SpecialTitle>
         </Title>
-        <Text margin={'0 0 2rem 0'}>
+        <Text $margin={'0 0 2rem 0'}>
           No DevBank, nossa missão é fornecer soluções bancárias abrangentes que
           capacitem indivíduos e empresas a atingir seus objetivos financeiros.
           Temos o compromisso de fornecer serviços personalizados e inovadores

@@ -24,7 +24,7 @@ const Products = () => {
       <Title>
         Nossos <SpecialTitle>produtos</SpecialTitle>
       </Title>
-      <Flex justify="space-between" align="center" wrap>
+      <Flex $justify="space-between" $align="center" $wrap>
         <Text id="description">
           Descubra uma gama de produtos bancários abrangentes e personaliáveis
           no DevBank, projetados para atender às suas necessidades e aspirações
@@ -45,7 +45,7 @@ const Products = () => {
           </Button>
         </Select>
       </Flex>
-      <Flex justify="center" wrap>
+      <Flex $justify="center" $wrap>
         <ProductsCard title={'Checando contas'} image={checking}>
           Aproveite o acesso fácil e conveniente aos seus fundos com nossa
           variedade de opções de conta corrente. Beneficie-se de recursos como

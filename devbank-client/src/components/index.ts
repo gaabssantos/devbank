@@ -7,13 +7,13 @@ type SpacerProps = {
 };
 
 type TextProps = {
-  margin?: string;
+  $margin?: string;
 };
 
 type FlexProps = {
-  justify?: string;
-  align?: string;
-  wrap?: boolean;
+  $justify?: string;
+  $align?: string;
+  $wrap?: boolean;
   $gap?: number;
 };
 
@@ -48,7 +48,7 @@ export const Text = styled.p<TextProps>`
   font-size: 15px;
   font-weight: 300;
   line-height: 24px;
-  margin: ${(props) => (props.margin ? props.margin : 0)};
+  margin: ${(props) => (props.$margin ? props.$margin : 0)};
 
   @media (max-width: 600px) {
     width: 25rem;
@@ -65,9 +65,9 @@ export const Spacer = styled.div<SpacerProps>`
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
-  justify-content: ${(props) => props.justify};
-  align-items: ${(props) => props.align};
-  flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'no-wrap')};
+  justify-content: ${(props) => props.$justify};
+  align-items: ${(props) => props.$align};
+  flex-wrap: ${(props) => (props.$wrap ? 'wrap' : 'no-wrap')};
   gap: ${(props) => `${props.$gap}rem`};
 `;
 
