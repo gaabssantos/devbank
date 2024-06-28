@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import Button from '../Button';
@@ -33,7 +34,7 @@ const Nav = ({ active }: NavProps) => {
   const [user, setUser] = useState({ name: '', email: '', balance: 0 });
 
   const navigate = useNavigate();
-  const { isUserLogged, getBalance } = useFetchAPI();
+  const { isUserLogged, getBalance, logoutUser } = useFetchAPI();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -47,6 +48,14 @@ const Nav = ({ active }: NavProps) => {
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+    toast.success(`Até mais, ${user.name}!`);
+    setTimeout(() => {
+      navigate('/');
+    }, 3000);
   };
 
   const DrawerList = (
@@ -81,7 +90,7 @@ const Nav = ({ active }: NavProps) => {
           <Item $active={active === '/segurança'}>Segurança</Item>
         </Items>
       </ResponsiveHidden>
-      {!isUserLogged ? (
+      {!isUserLogged() ? (
         <ResponsiveHidden>
           <Button variant="none">
             <Link to={'/cadastrar'}>Cadastrar</Link>
@@ -91,7 +100,12 @@ const Nav = ({ active }: NavProps) => {
           </Link>
         </ResponsiveHidden>
       ) : (
-        <p>Olá, {user.name}!</p>
+        <>
+          <p>Olá, {user.name}!</p>
+          <Button variant="none" onClick={handleLogout}>
+            Sair
+          </Button>
+        </>
       )}
       <Responsive>
         <ResponsiveBar onClick={toggleDrawer(true)} />

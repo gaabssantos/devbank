@@ -9,6 +9,7 @@ interface FetchAPIProps {
   sessionUser: (data: SessionUserData) => Promise<void>;
   getBalance: () => Promise<Balance>;
   isUserLogged: () => boolean;
+  logoutUser: () => void;
 }
 
 const FetchAPIContext = createContext<FetchAPIProps>({} as FetchAPIProps);
@@ -51,9 +52,13 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
     return false;
   }, []);
 
+  const logoutUser = useCallback(() => {
+    localStorage.removeItem('devbank:userData');
+  }, []);
+
   return (
     <FetchAPIContext.Provider
-      value={{ createUser, sessionUser, getBalance, isUserLogged }}
+      value={{ createUser, sessionUser, getBalance, isUserLogged, logoutUser }}
     >
       {children}
     </FetchAPIContext.Provider>
