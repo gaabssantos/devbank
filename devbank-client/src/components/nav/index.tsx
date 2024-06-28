@@ -7,7 +7,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 import ResponsiveBar from '../ResponsiveBar';
@@ -29,6 +29,7 @@ type NavProps = {
 
 const Nav = ({ active }: NavProps) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -39,7 +40,7 @@ const Nav = ({ active }: NavProps) => {
       <List>
         {['Home', 'Carreiras', 'Sobre', 'Segurança'].map((text) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/')}>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
