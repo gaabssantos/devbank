@@ -6,9 +6,10 @@ import {
   ListItemButton,
   ListItemText,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { useFetchAPI } from '../../hooks/useFetchAPI';
 import Button from '../Button';
 import ResponsiveBar from '../ResponsiveBar';
 import {
@@ -29,7 +30,20 @@ type NavProps = {
 
 const Nav = ({ active }: NavProps) => {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState({ name: '', email: '', balance: 0 });
+
   const navigate = useNavigate();
+  const { isUserLogged, getBalance } = useFetchAPI();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await getBalance();
+
+      setUser(data);
+    };
+
+    fetchUser();
+  }, [getBalance]);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -67,14 +81,18 @@ const Nav = ({ active }: NavProps) => {
           <Item $active={active === '/segurança'}>Segurança</Item>
         </Items>
       </ResponsiveHidden>
-      <ResponsiveHidden>
-        <Button variant="none">
-          <Link to={'/cadastrar'}>Cadastrar</Link>
-        </Button>
-        <Link to={'/logar'}>
-          <Button variant="green">Logar</Button>
-        </Link>
-      </ResponsiveHidden>
+      {!isUserLogged ? (
+        <ResponsiveHidden>
+          <Button variant="none">
+            <Link to={'/cadastrar'}>Cadastrar</Link>
+          </Button>
+          <Link to={'/logar'}>
+            <Button variant="green">Logar</Button>
+          </Link>
+        </ResponsiveHidden>
+      ) : (
+        <p>Olá, {user.name}!</p>
+      )}
       <Responsive>
         <ResponsiveBar onClick={toggleDrawer(true)} />
       </Responsive>
