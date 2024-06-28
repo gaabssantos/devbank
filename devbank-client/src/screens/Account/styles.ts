@@ -28,6 +28,10 @@ export const Card = styled.div`
   p {
     font-size: 1.5rem;
   }
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Activities = styled.div`
