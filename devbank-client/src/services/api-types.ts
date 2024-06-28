@@ -11,3 +11,9 @@ export type User = {
   password: string;
   token?: string;
 };
+
+export type Balance = {
+  name: string;
+  email: string;
+  balance: number;
+};

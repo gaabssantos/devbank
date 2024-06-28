@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { CreateUser, User } from './api-types';
+import { Balance, CreateUser, User } from './api-types';
 
 export class APIService {
   private static client = axios.create({
@@ -18,6 +18,22 @@ export class APIService {
 
   static async sessionUser(user: User): Promise<User> {
     const { data } = await APIService.client.post<User>('/users/session', user);
+
+    return data;
+  }
+
+  static async getBalance(): Promise<Balance> {
+    this.client.interceptors.request.use(async (config) => {
+      const userData = await JSON.parse(
+        localStorage.getItem('devbank:userData') as string,
+      );
+      const token = userData && userData.token;
+      config.headers.authorization = `Bearer ${token}`;
+
+      return config;
+    });
+
+    const { data } = await APIService.client.get('/balance');
 
     return data;
   }

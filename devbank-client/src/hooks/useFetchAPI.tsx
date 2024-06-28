@@ -1,11 +1,13 @@
 import { ReactNode, createContext, useCallback, useContext } from 'react';
 
 import { APIService } from '../services/api';
+import { Balance } from '../services/api-types';
 import { CreateUserData, SessionUserData } from '../validators/types';
 
 interface FetchAPIProps {
   createUser: (data: CreateUserData) => Promise<void>;
   sessionUser: (data: SessionUserData) => Promise<void>;
+  getBalance: () => Promise<Balance>;
 }
 
 const FetchAPIContext = createContext<FetchAPIProps>({} as FetchAPIProps);
@@ -34,8 +36,14 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
     localStorage.setItem('devbank:userData', JSON.stringify(userObj));
   }, []);
 
+  const getBalance = useCallback(async () => {
+    const user = await APIService.getBalance();
+
+    return user;
+  }, []);
+
   return (
-    <FetchAPIContext.Provider value={{ createUser, sessionUser }}>
+    <FetchAPIContext.Provider value={{ createUser, sessionUser, getBalance }}>
       {children}
     </FetchAPIContext.Provider>
   );
