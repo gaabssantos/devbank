@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
@@ -8,15 +9,20 @@ import numberFormat from '../../utils/numberFormat';
 import { Activities, Activity, Card, Container, Transfer } from './styles';
 
 const Account = () => {
+  const { getBalance, isUserLogged } = useFetchAPI();
+  const navigate = useNavigate();
+
   const [user, setUser] = useState<Balance>({
     name: '',
     email: '',
     balance: 0,
   });
 
-  const { getBalance } = useFetchAPI();
-
   useEffect(() => {
+    if (!isUserLogged()) {
+      navigate('/');
+    }
+
     const fetchUser = async () => {
       const data = await getBalance();
 
@@ -24,7 +30,7 @@ const Account = () => {
     };
 
     fetchUser();
-  }, [getBalance]);
+  }, [getBalance, isUserLogged, navigate]);
 
   return (
     <Container>

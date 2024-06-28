@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { AxiosError } from 'axios';
 import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
@@ -48,11 +49,20 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<Inputs> = async (data: SessionUserData) => {
-    await sessionUser(data);
-    toast.success('Bem-vindo de volta!');
-    setTimeout(() => {
-      navigate('/account');
-    }, 3000);
+    try {
+      await sessionUser(data);
+      toast.success('Bem-vindo de volta!');
+
+      setTimeout(() => {
+        navigate('/account');
+      }, 3000);
+    } catch (error) {
+      const err = error as AxiosError;
+
+      if (err.response?.status === 401) {
+        toast.error('Este e-mail não existe');
+      }
+    }
   };
 
   return (

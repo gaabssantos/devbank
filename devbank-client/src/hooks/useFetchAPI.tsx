@@ -8,6 +8,7 @@ interface FetchAPIProps {
   createUser: (data: CreateUserData) => Promise<void>;
   sessionUser: (data: SessionUserData) => Promise<void>;
   getBalance: () => Promise<Balance>;
+  isUserLogged: () => boolean;
 }
 
 const FetchAPIContext = createContext<FetchAPIProps>({} as FetchAPIProps);
@@ -42,8 +43,18 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
     return user;
   }, []);
 
+  const isUserLogged = useCallback(() => {
+    if (localStorage.getItem('devbank:userData')) {
+      return true;
+    }
+
+    return false;
+  }, []);
+
   return (
-    <FetchAPIContext.Provider value={{ createUser, sessionUser, getBalance }}>
+    <FetchAPIContext.Provider
+      value={{ createUser, sessionUser, getBalance, isUserLogged }}
+    >
       {children}
     </FetchAPIContext.Provider>
   );
