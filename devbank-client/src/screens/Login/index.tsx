@@ -1,7 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import * as z from 'zod';
 
 import {
@@ -44,9 +45,14 @@ const SignUp = () => {
   });
 
   const { sessionUser } = useFetchAPI();
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<Inputs> = async (data: SessionUserData) => {
     await sessionUser(data);
+    toast.success('Bem-vindo de volta!');
+    setTimeout(() => {
+      navigate('/account');
+    }, 3000);
   };
 
   return (
