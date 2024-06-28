@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { AppError } from '../errors/app.error';
 import { UserService } from '../services/users.service';
 
 interface RequestType extends Request {
@@ -23,6 +22,7 @@ export class BalanceController {
         name: userFound?.name,
         email: userFound?.email,
         balance: userFound?.balance,
+        activities: userFound?.activities,
       });
     } catch (err) {
       next(err);
