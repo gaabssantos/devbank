@@ -9,6 +9,7 @@ export const Container = styled.div`
   margin-top: 2rem;
   gap: 2rem;
   color: ${themes.absolutes.white};
+  align-items: flex-start;
 `;
 
 export const Card = styled.div`
