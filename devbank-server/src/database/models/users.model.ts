@@ -7,6 +7,7 @@ const UserSchema = new Schema(
     email: String,
     password: String,
     balance: Number,
+    activities: Array,
   },
   {
     versionKey: false,

@@ -6,6 +6,7 @@ export type UserDTO = {
   email: string;
   password: string;
   balance: number;
+  activities: object[];
 };
 
 export const userSchema = {

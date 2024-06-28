@@ -10,6 +10,7 @@ export class UserRepository {
     email,
     password,
     balance,
+    activities,
   }: UserEntity): Promise<UserEntity> => {
     const userCreated = await this.userModel.create({
       name,
@@ -17,6 +18,7 @@ export class UserRepository {
       email,
       password,
       balance,
+      activities,
     });
 
     return userCreated.toObject<UserEntity>();

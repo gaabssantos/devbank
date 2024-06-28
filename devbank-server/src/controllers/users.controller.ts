@@ -34,6 +34,7 @@ export class UserController {
         email,
         password: passwordHashed,
         balance: 0,
+        activities: [],
       });
 
       return res.status(StatusCodes.CREATED).json(user);

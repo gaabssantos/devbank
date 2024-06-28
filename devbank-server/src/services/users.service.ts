@@ -5,8 +5,22 @@ import { UserEntity } from '../entities/users.entity';
 export class UserService {
   constructor(private userRepository: UserRepository) {}
 
-  create = async ({ name, lastName, email, password, balance }: UserDTO) => {
-    const user = new UserEntity({ name, lastName, email, password, balance });
+  create = async ({
+    name,
+    lastName,
+    email,
+    password,
+    balance,
+    activities,
+  }: UserDTO) => {
+    const user = new UserEntity({
+      name,
+      lastName,
+      email,
+      password,
+      balance,
+      activities,
+    });
 
     const userCreated = await this.userRepository.create(user);
 
