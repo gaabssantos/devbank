@@ -14,8 +14,8 @@ import {
 import Button from '../../components/Button';
 import SignupDesign from '../../components/Images/SignupDesign';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
-import { Actions, Container, Form, InputControl } from './styles';
 import { SessionUserData } from '../../validators/types';
+import { Actions, Container, Form, InputControl } from './styles';
 
 type Inputs = {
   email: string;
