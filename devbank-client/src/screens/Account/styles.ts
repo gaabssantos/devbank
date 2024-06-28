@@ -51,6 +51,10 @@ export const Activity = styled.div`
   }
 `;
 
+export const ActivityEmpty = styled.p`
+  margin-top: 1rem;
+`;
+
 export const Transfer = styled.div`
   border-top: 1px solid ${themes.shades.gray.variant8};
   margin-top: 1rem;

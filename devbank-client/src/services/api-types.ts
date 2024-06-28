@@ -16,4 +16,10 @@ export type Balance = {
   name: string;
   email: string;
   balance: number;
+  activities: [
+    {
+      name: string;
+      value: number;
+    },
+  ];
 };

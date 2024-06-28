@@ -51,7 +51,7 @@ export class UserRepository {
 
     await this.userModel.findOneAndUpdate(
       { email: emailFrom },
-      { $push: { activities: { email, value } } },
+      { $push: { activities: { name: transferredUser?.name, value } } },
     );
 
     return toUser?.toObject<UserEntity>();

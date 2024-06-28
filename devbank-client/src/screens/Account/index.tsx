@@ -6,7 +6,14 @@ import Button from '../../components/Button';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { Balance } from '../../services/api-types';
 import numberFormat from '../../utils/numberFormat';
-import { Activities, Activity, Card, Container, Transfer } from './styles';
+import {
+  Activities,
+  Activity,
+  ActivityEmpty,
+  Card,
+  Container,
+  Transfer,
+} from './styles';
 
 const Account = () => {
   const { getBalance, isUserLogged } = useFetchAPI();
@@ -16,6 +23,7 @@ const Account = () => {
     name: '',
     email: '',
     balance: 0,
+    activities: [{ name: '', value: 0 }],
   });
 
   useEffect(() => {
@@ -44,11 +52,27 @@ const Account = () => {
       </Card>
       <Activities>
         <h2>Sua atividade</h2>
-        <Activity>
-          <FaMoneyBillTransfer />
-          <p>Transferência feita para Usuário</p>
-          <p>-R$ 180</p>
-        </Activity>
+        {user && user.activities.length > 0 ? (
+          user.activities.map((activity) => (
+            <Activity>
+              <FaMoneyBillTransfer />
+              <p>Transferência feita para {activity.name}</p>
+              <p>-{numberFormat(activity.value)}</p>
+            </Activity>
+          ))
+        ) : (
+          <ActivityEmpty>
+            Ainda você não possui nenhuma atividade.
+          </ActivityEmpty>
+        )}
+        {/* {user &&
+          user.activities.map((activity) => (
+            <Activity>
+              <FaMoneyBillTransfer />
+              <p>Transferência feita para {activity.name}</p>
+              <p>-{numberFormat(activity.value)}</p>
+            </Activity>
+          ))} */}
       </Activities>
     </Container>
   );
