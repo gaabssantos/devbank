@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 import Footer from '../components/Footer';
@@ -10,18 +10,25 @@ import { Container, MainContainer } from './styles';
 
 const DefaultLayout = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  const { getBalance } = useFetchAPI();
+  const { getBalance, isUserLogged } = useFetchAPI();
 
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
+    if (!isUserLogged()) {
+      navigate('/');
+    } else {
+      navigate('/account');
+    }
+
     const fetchUserName = async () => {
       setUserName((await getBalance()).name);
     };
 
     fetchUserName();
-  });
+  }, [isUserLogged, getBalance, navigate]);
 
   return (
     <>
