@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { UserDTO } from '../dtos/users.dto';
 import { AppError } from '../errors/app.error';
 import { UserService } from '../services/users.service';
 

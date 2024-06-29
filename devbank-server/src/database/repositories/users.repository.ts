@@ -1,3 +1,5 @@
+import { v4 } from 'uuid';
+
 import { UserEntity } from '../../entities/users.entity';
 import { UserModel } from '../models/users.model';
 
@@ -51,7 +53,9 @@ export class UserRepository {
 
     await this.userModel.findOneAndUpdate(
       { email: emailFrom },
-      { $push: { activities: { name: transferredUser?.name, value } } },
+      {
+        $push: { activities: { id: v4(), name: transferredUser?.name, value } },
+      },
     );
 
     return toUser?.toObject<UserEntity>();
