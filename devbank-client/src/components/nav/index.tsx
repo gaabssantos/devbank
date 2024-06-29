@@ -6,7 +6,7 @@ import {
   ListItemButton,
   ListItemText,
 } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -27,24 +27,14 @@ import logo from '/logo.png';
 
 type NavProps = {
   active: string;
+  userName: string;
 };
 
-const Nav = ({ active }: NavProps) => {
+const Nav = ({ active, userName }: NavProps) => {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState({ name: '', email: '', balance: 0 });
 
   const navigate = useNavigate();
-  const { isUserLogged, getBalance, logoutUser } = useFetchAPI();
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const data = await getBalance();
-
-      setUser(data);
-    };
-
-    fetchUser();
-  }, [getBalance]);
+  const { isUserLogged, logoutUser } = useFetchAPI();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -52,7 +42,7 @@ const Nav = ({ active }: NavProps) => {
 
   const handleLogout = () => {
     logoutUser();
-    toast.success(`Até mais, ${user.name}!`);
+    toast.success(`Até mais, ${userName}!`);
     setTimeout(() => {
       navigate('/');
     }, 3000);
@@ -101,7 +91,7 @@ const Nav = ({ active }: NavProps) => {
         </ResponsiveHidden>
       ) : (
         <>
-          <p>Olá, {user.name}!</p>
+          <p>Olá, {userName}!</p>
           <Button variant="none" onClick={handleLogout}>
             Sair
           </Button>
