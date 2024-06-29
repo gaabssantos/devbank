@@ -14,13 +14,18 @@ export class TransferController {
       const user = await this.userService.findByEmail(email);
 
       if (!user) {
-        throw new AppError('This email not exists.', StatusCodes.BAD_REQUEST);
+        throw new AppError(
+          'This email not exists.',
+          StatusCodes.BAD_REQUEST,
+          'email_not_exists',
+        );
       }
 
       if (value <= 0) {
         throw new AppError(
           'The value need to be more than 0',
           StatusCodes.BAD_REQUEST,
+          'value_more_than_0',
         );
       }
 
@@ -30,6 +35,7 @@ export class TransferController {
         throw new AppError(
           `You are can't transfer for yourself`,
           StatusCodes.BAD_REQUEST,
+          'transfer_yourself',
         );
       }
 
@@ -40,6 +46,7 @@ export class TransferController {
           throw new AppError(
             'Your balance is less than value.',
             StatusCodes.BAD_REQUEST,
+            'balance_less_than_value',
           );
         }
       }
