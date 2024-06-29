@@ -457,6 +457,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "@types/uuid@npm:10.0.0"
+  checksum: e3958f8b0fe551c86c14431f5940c3470127293280830684154b91dc7eb3514aeb79fe3216968833cf79d4d1c67f580f054b5be2cd562bebf4f728913e73e944
+  languageName: node
+  linkType: hard
+
 "@types/webidl-conversions@npm:*":
   version: 7.0.3
   resolution: "@types/webidl-conversions@npm:7.0.3"
@@ -1062,6 +1069,7 @@ __metadata:
     "@types/bcrypt": ^5.0.2
     "@types/express": ^4.17.21
     "@types/jsonwebtoken": ^9.0.6
+    "@types/uuid": ^10.0.0
     "@typescript-eslint/eslint-plugin": ^7.9.0
     "@typescript-eslint/parser": ^7.9.0
     bcrypt: ^5.1.1
@@ -1078,6 +1086,7 @@ __metadata:
     prettier: ^3.2.5
     tsx: ^4.10.2
     typescript: ^5.4.5
+    uuid: ^10.0.0
     zod: ^3.23.8
   languageName: unknown
   linkType: soft
@@ -3401,6 +3410,15 @@ __metadata:
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: c81095493225ecfc28add49c106ca4f09cdf56bc66731aa8dabc2edbbccb1e1bfe2de6a115e5c6a380d3ea166d1636410b62ef216bb07b3feb1cfde1d95d5080
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "uuid@npm:10.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 4b81611ade2885d2313ddd8dc865d93d8dccc13ddf901745edca8f86d99bc46d7a330d678e7532e7ebf93ce616679fb19b2e3568873ac0c14c999032acb25869
   languageName: node
   linkType: hard
 
