@@ -366,6 +366,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cors@npm:^2.8.17":
+  version: 2.8.17
+  resolution: "@types/cors@npm:2.8.17"
+  dependencies:
+    "@types/node": "*"
+  checksum: 469bd85e29a35977099a3745c78e489916011169a664e97c4c3d6538143b0a16e4cc72b05b407dc008df3892ed7bf595f9b7c0f1f4680e169565ee9d64966bde
+  languageName: node
+  linkType: hard
+
 "@types/express-serve-static-core@npm:^4.17.33":
   version: 4.19.0
   resolution: "@types/express-serve-static-core@npm:4.19.0"
@@ -1067,6 +1076,7 @@ __metadata:
   resolution: "devbank@workspace:."
   dependencies:
     "@types/bcrypt": ^5.0.2
+    "@types/cors": ^2.8.17
     "@types/express": ^4.17.21
     "@types/jsonwebtoken": ^9.0.6
     "@types/uuid": ^10.0.0
