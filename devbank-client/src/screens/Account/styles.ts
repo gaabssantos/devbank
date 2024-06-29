@@ -1,3 +1,4 @@
+import { InputNumberFormat } from '@react-input/number-format';
 import styled from 'styled-components';
 
 import themes from '../../styles/themes.json';
@@ -59,4 +60,15 @@ export const Transfer = styled.div`
   border-top: 1px solid ${themes.shades.gray.variant8};
   margin-top: 1rem;
   padding-top: 1rem;
+`;
+
+export const CurrencyInput = styled(InputNumberFormat)`
+  border: 0;
+  border-radius: 5.5rem;
+  border: 1px solid ${themes.shades.gray.variant4};
+  background: ${themes.shades.gray.variant3};
+  padding: 1.5rem;
+  width: 100%;
+  margin: 0.87rem;
+  color: ${themes.absolutes.white};
 `;
