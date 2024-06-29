@@ -9,6 +9,7 @@ import * as z from 'zod';
 import {
   ErrorMessage,
   ErrorText,
+  Form,
   SpecialTitle,
   Text,
   Title,
@@ -17,7 +18,7 @@ import Button from '../../components/Button';
 import SignupDesign from '../../components/Images/SignupDesign';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { CreateUserData } from '../../validators/types';
-import { Actions, Container, Form, InputControl } from './styles';
+import { Actions, Container, InputControl } from './styles';
 
 import 'react-toastify/dist/ReactToastify.css';
 

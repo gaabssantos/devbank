@@ -32,28 +32,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  width: 100%;
-  margin: 3rem 0;
-
-  input {
-    border: 0;
-    border-radius: 5.5rem;
-    border: 1px solid ${themes.shades.gray.variant4};
-    background: ${themes.shades.gray.variant3};
-    padding: 1.5rem;
-    margin: 0.87rem;
-    color: ${themes.absolutes.white};
-  }
-
-  @media (max-width: 800px) {
-    input {
-      width: 90%;
-      margin: 1rem;
-    }
-  }
-`;
-
 export const InputControl = styled.div`
   display: flex;
   justify-content: center;
