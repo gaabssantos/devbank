@@ -1,9 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Modal } from '@mui/material';
+import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { z } from 'zod';
 
 import { ErrorText, Form } from '../../components';
@@ -29,7 +31,7 @@ type Inputs = {
 };
 
 const Account = () => {
-  const { getBalance, isUserLogged } = useFetchAPI();
+  const { createTransfer, getBalance } = useFetchAPI();
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
@@ -37,7 +39,7 @@ const Account = () => {
     name: '',
     email: '',
     balance: 0,
-    activities: [{ name: '', value: 0 }],
+    activities: [{ id: '', name: '', value: 0 }],
   });
 
   const style = {
@@ -88,15 +90,30 @@ const Account = () => {
     reset();
   };
 
-  const onSubmit: SubmitHandler<Inputs> = (d: TransferData) => {
-    console.log(d);
+  const onSubmit: SubmitHandler<Inputs> = async (data: TransferData) => {
+    try {
+      await createTransfer(data);
+      const userData = await getBalance();
+      setUser(userData);
+      toast.success('Transferência concluida com sucesso.');
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response?.data.errorText === 'transfer_yourself') {
+          toast.error('Você não pode transferir para você mesmo.');
+        } else if (error.response?.data.errorText === 'email_not_exists') {
+          toast.error('Este e-mail não existe.');
+        } else if (
+          error.response?.data.errorText === 'balance_less_than_value'
+        ) {
+          toast.error(
+            'O seu saldo é menor do que o valor que você quer transferir.',
+          );
+        }
+      }
+    }
   };
 
   useEffect(() => {
-    if (!isUserLogged()) {
-      navigate('/');
-    }
-
     const fetchUser = async () => {
       const data = await getBalance();
 
@@ -104,7 +121,7 @@ const Account = () => {
     };
 
     fetchUser();
-  }, [getBalance, isUserLogged, navigate]);
+  }, [getBalance, navigate]);
 
   return (
     <Container>
@@ -150,7 +167,7 @@ const Account = () => {
         <h2>Sua atividade</h2>
         {user && user.activities.length > 0 ? (
           user.activities.map((activity) => (
-            <Activity>
+            <Activity key={activity.id}>
               <FaMoneyBillTransfer />
               <p>Transferência feita para {activity.name}</p>
               <p>-{numberFormat(activity.value)}</p>

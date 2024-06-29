@@ -2,10 +2,15 @@ import { ReactNode, createContext, useCallback, useContext } from 'react';
 
 import { APIService } from '../services/api';
 import { Balance } from '../services/api-types';
-import { CreateUserData, SessionUserData } from '../validators/types';
+import {
+  CreateUserData,
+  SessionUserData,
+  TransferData,
+} from '../validators/types';
 
 interface FetchAPIProps {
   createUser: (data: CreateUserData) => Promise<void>;
+  createTransfer: (data: TransferData) => Promise<void>;
   sessionUser: (data: SessionUserData) => Promise<void>;
   getBalance: () => Promise<Balance>;
   isUserLogged: () => boolean;
@@ -22,6 +27,13 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
   const createUser = useCallback(async (data: CreateUserData) => {
     await APIService.createUser({
       ...data,
+    });
+  }, []);
+
+  const createTransfer = useCallback(async (data: TransferData) => {
+    await APIService.createTransfer({
+      ...data,
+      value: Number(data.value.replace(/[^0-9]/g, '')) / 100,
     });
   }, []);
 
@@ -58,7 +70,14 @@ export function FetchAPIProvider({ children }: FetchAPIProviderProps) {
 
   return (
     <FetchAPIContext.Provider
-      value={{ createUser, sessionUser, getBalance, isUserLogged, logoutUser }}
+      value={{
+        createUser,
+        createTransfer,
+        sessionUser,
+        getBalance,
+        isUserLogged,
+        logoutUser,
+      }}
     >
       {children}
     </FetchAPIContext.Provider>

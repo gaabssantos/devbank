@@ -18,8 +18,14 @@ export type Balance = {
   balance: number;
   activities: [
     {
+      id: string;
       name: string;
       value: number;
     },
   ];
+};
+
+export type Transfer = {
+  email: string;
+  value: number;
 };

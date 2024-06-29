@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { Balance, CreateUser, User } from './api-types';
+import { Balance, CreateUser, Transfer, User } from './api-types';
 
 export class APIService {
   private static client = axios.create({
@@ -11,6 +11,15 @@ export class APIService {
     const { data } = await APIService.client.post<User>(
       '/users',
       createUserData,
+    );
+
+    return data;
+  }
+
+  static async createTransfer(createTransferData: Transfer): Promise<Transfer> {
+    const { data } = await APIService.client.post<Transfer>(
+      '/transfers',
+      createTransferData,
     );
 
     return data;
