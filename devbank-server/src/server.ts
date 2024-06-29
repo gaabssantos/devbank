@@ -15,7 +15,7 @@ setupMongo().then(() => {
   app.use(routes);
   app.use(errorHandler);
 
-  const port = process.env.PORT;
+  const port = process.env.PORT || 5000;
 
   app.listen(port, () => {
     console.log(`✨ Server has started in port ${port}!`);
