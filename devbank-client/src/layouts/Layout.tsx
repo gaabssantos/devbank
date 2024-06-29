@@ -18,7 +18,9 @@ const DefaultLayout = () => {
 
   useEffect(() => {
     if (!isUserLogged()) {
-      navigate('/');
+      if (pathname === '/account') {
+        navigate('/');
+      }
     } else {
       navigate('/account');
     }
