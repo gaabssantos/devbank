@@ -130,3 +130,26 @@ export const ErrorMessage = styled.div`
 export const ErrorText = styled.p`
   color: ${absolutes.errorText};
 `;
+
+export const Form = styled.form`
+  width: 100%;
+  margin: 3rem 0;
+
+  input {
+    border: 0;
+    border-radius: 5.5rem;
+    border: 1px solid ${shades.gray.variant4};
+    background: ${shades.gray.variant3};
+    padding: 1.5rem;
+    width: 100%;
+    margin: 0.87rem;
+    color: ${absolutes.white};
+  }
+
+  @media (max-width: 800px) {
+    input {
+      width: 90%;
+      margin: 1rem;
+    }
+  }
+`;
