@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.5",
     "@hookform/resolvers": "^3.6.0",
     "@mui/material": "^5.15.19",
+    "@react-input/number-format": "^1.0.27",
     "axios": "^1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

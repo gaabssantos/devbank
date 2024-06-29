@@ -1040,6 +1040,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-input/core@npm:^1.0.12":
+  version: 1.0.12
+  resolution: "@react-input/core@npm:1.0.12"
+  peerDependencies:
+    "@types/react": ">=16.8"
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 7a8c933d854440e4bc6309c2a278f1e38608c6c36902cf2839ba515f5bd1e4a2ab950dc33575fb58df696df59b21a461edb4403653aa498ee96ca0e5f9b74ed6
+  languageName: node
+  linkType: hard
+
+"@react-input/number-format@npm:^1.0.27":
+  version: 1.0.27
+  resolution: "@react-input/number-format@npm:1.0.27"
+  dependencies:
+    "@react-input/core": ^1.0.12
+  peerDependencies:
+    "@types/react": ">=16.8"
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: ba8031ed145a9706e558521ab27a8bd37ac6f27a3b1bd8952e815806ef63e214b9f1abf491789fb9df30a06e5f275d06aab4f36a797ab8bb5eb8ca8444ad7ffb
+  languageName: node
+  linkType: hard
+
 "@remix-run/router@npm:1.16.1":
   version: 1.16.1
   resolution: "@remix-run/router@npm:1.16.1"
@@ -1811,6 +1841,7 @@ __metadata:
     "@emotion/styled": ^11.11.5
     "@hookform/resolvers": ^3.6.0
     "@mui/material": ^5.15.19
+    "@react-input/number-format": ^1.0.27
     "@types/react": ^18.2.66
     "@types/react-dom": ^18.2.22
     "@typescript-eslint/eslint-plugin": ^7.2.0
