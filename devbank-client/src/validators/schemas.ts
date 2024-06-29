@@ -22,3 +22,11 @@ export const sessionUserSchema = z.object({
     .trim()
     .min(8, { message: 'A senha é preciso ter, pelo menos, 8 caracteres' }),
 });
+
+export const transferSchema = z.object({
+  email: z.string().email({ message: 'Este e-mail está inválido.' }),
+  value: z
+    .string()
+    .min(1, { message: 'Deve conter pelo menos 1 dígito' })
+    .max(255),
+});
