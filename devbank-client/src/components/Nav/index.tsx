@@ -97,9 +97,11 @@ const Nav = ({ active, userName }: NavProps) => {
           </Button>
         </>
       )}
-      <Responsive>
-        <ResponsiveBar onClick={toggleDrawer(true)} />
-      </Responsive>
+      {!isUserLogged() && (
+        <Responsive>
+          <ResponsiveBar onClick={toggleDrawer(true)} />
+        </Responsive>
+      )}
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
