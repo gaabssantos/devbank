@@ -33,7 +33,7 @@ export class UserController {
         lastName,
         email,
         password: passwordHashed,
-        balance: 0,
+        balance: 5000,
         activities: [],
       });
 
