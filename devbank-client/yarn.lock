@@ -1859,6 +1859,7 @@ __metadata:
     react-dom: ^18.2.0
     react-hook-form: ^7.52.0
     react-icons: ^5.2.1
+    react-loading-icons: ^1.1.0
     react-router-dom: ^6.23.1
     react-toastify: ^10.0.5
     styled-components: ^6.1.11
@@ -3375,6 +3376,13 @@ __metadata:
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
   checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
+  languageName: node
+  linkType: hard
+
+"react-loading-icons@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "react-loading-icons@npm:1.1.0"
+  checksum: 41ee0f589c4cf04c9745bb3bc19febcf82deb8e4623072102f8ef861b3e06ecab449a5f74490075a4ecd6de215bebdb33e06b8e0b609158866e119c108e1312f
   languageName: node
   linkType: hard
 
