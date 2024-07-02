@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-import { ErrorText, Form } from '../../components';
+import { ErrorText, Form, Loading } from '../../components';
 import Button from '../../components/Button';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { Balance } from '../../services/api-types';
@@ -126,7 +126,7 @@ const Account = () => {
   return (
     <Container>
       <Card>
-        <h2>Olá, {user.name}!</h2>
+        {user.name ? <h2>Olá, {user.name}!</h2> : <Loading />}
         <span>Dinheiro disponível</span>
         <p>{numberFormat(user.balance)}</p>
         <Transfer>
@@ -165,14 +165,20 @@ const Account = () => {
       </Card>
       <Activities>
         <h2>Sua atividade</h2>
-        {user && user.activities.length > 0 ? (
-          user.activities.map((activity) => (
-            <Activity key={activity.id}>
-              <FaMoneyBillTransfer />
-              <p>Transferência feita para {activity.name}</p>
-              <p>-{numberFormat(activity.value)}</p>
-            </Activity>
-          ))
+        {user.activities && user.activities.length > 0 ? (
+          user.activities.map((activity) => {
+            if (activity.name) {
+              return (
+                <Activity key={activity.id}>
+                  <FaMoneyBillTransfer />
+                  <p>Transferência feita para {activity.name}</p>
+                  <p>-{numberFormat(activity.value)}</p>
+                </Activity>
+              );
+            } else {
+              return <Loading />;
+            }
+          })
         ) : (
           <ActivityEmpty>
             Ainda você não possui nenhuma atividade.

@@ -25,6 +25,8 @@ import {
 
 import logo from '/logo.png';
 
+import { Loading } from '..';
+
 type NavProps = {
   active: string;
   userName: string;
@@ -91,7 +93,7 @@ const Nav = ({ active, userName }: NavProps) => {
         </ResponsiveHidden>
       ) : (
         <>
-          <p>Olá, {userName}!</p>
+          {userName ? <p>Olá, {userName}!</p> : <Loading />}
           <Button variant="none" onClick={handleLogout}>
             Sair
           </Button>

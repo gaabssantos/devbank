@@ -1,3 +1,4 @@
+import { SpinningCircles } from 'react-loading-icons';
 import styled from 'styled-components';
 
 import { absolutes, primary, shades } from '../styles/themes.json';
@@ -152,4 +153,10 @@ export const Form = styled.form`
       margin: 1rem;
     }
   }
+`;
+
+export const Loading = styled(SpinningCircles)`
+  stroke: ${shades.gray.variant5};
+  stroke-opacity: 0.125;
+  width: 1.87rem;
 `;
