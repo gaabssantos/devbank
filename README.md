@@ -1,6 +1,6 @@
 <h1>📝 Introdução</h1>
 
-<p>Projeto de uma plataforma de banco digital que permite aos usuários gerenciar suas finanças de forma prática e segura. A aplicação inclui funcionalidades como abertura de contas, transferências entre usuários, consulta de saldo em tempo real e visualização de histórico de transações, com uma interface moderna e acessível para diferentes dispositivos.</p>
+<p>Projeto de um website para gerenciamento de tarefas e organização de projetos, criado para facilitar o trabalho em equipe e o planejamento individual. A plataforma permite criar e personalizar quadros, listas e cartões. Com uma interface intuitiva e responsiva, o sistema promove a produtividade e a colaboração de forma prática e eficiente.</p>
 
 <h1>🖥️ Tecnologias</h1>
 
@@ -10,22 +10,26 @@
   <li>Styled Components</li>
   <li>Axios</li>
   <li>Material UI</li>
-  <li>React Input</li>
   <li>React Icons</li>
-  <li>Zod</li>
+  <li>React Input</li>
+  <li>React Hook Form</li>
+  <li>React Toastify</li>
+  
   <li>Node</li>
   <li>TypeScript</li>
+  <li>Zod</li>
   <li>Express</li>
-  <li>MongoDB</li>
+  <li>PostgreSQL</li>
   <li>bCrypt</li>
   <li>JSONWebToken</li>
 </ul>
 
 <h1>🌐 Deploy</h1>
-<a href="https://devbank-five.vercel.app">Clique aqui para visitar meu projeto!</a>
+<a href="https://organizeme-client.vercel.app">Clique aqui para visitar meu projeto!</a>
 
 <h1>🖼️ Imagens</h1>
 
-![image](https://github.com/user-attachments/assets/1ff9a2c2-6ad4-4397-8248-9d76c4616883)
-![image](https://github.com/user-attachments/assets/1cc7091e-10fc-42d9-bf78-f0df1a9bc119)
-![image](https://github.com/user-attachments/assets/0e0a6f93-4712-472b-a4a2-19ffe8480a24)
+![image](https://github.com/user-attachments/assets/f84d6065-509b-4672-a449-bb10d36679bc)
+![image](https://github.com/user-attachments/assets/37618227-314a-4a32-a949-c6c1eecee861)
+![image](https://github.com/user-attachments/assets/04720c72-b018-4cea-a8ca-517da0dc0b1d)
+
